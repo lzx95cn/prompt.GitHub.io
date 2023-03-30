@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hayo·prompt排列组合器</title>
+      
+</head>
+
+<body>
+	<h1>Hayo·prompt排列组合器</h1>
+	<p>你可以根据需要定制的风格来进行排列组合，然后将生成的prompt添加到你的已有描述中:</p>
+	<form>
+        <h3>画面的整体风格</h3>
+		<select id="select1">
+			<option value="">画风</option>
+            <option value="artbook">原画</option>
+            <option value="tachi-e">立绘样式</option>
+            <option value="dakimakura">抱枕</option>
+            <option value="photo">照片</option>
+            <option value="realistic">现实</option>
+            <option value="traditional_media">手绘</option>
+		</select>
+        <h3>上身细节</h3>
+		<select id="select2">
+			<option value="">头发样式</option>
+            <option value="multicolored hair">多彩的头发</option>
+            <option value="ahoge">呆毛</option>
+            <option value="asymmetrical hair">半边刘海</option>
+            <option value="blunt bangs">齐刘海</option>
+            <option value="parted bangs">分开的刘海</option>
+            <option value="side swept bangs">朝一个方向的刘海</option>
+            <option value="curtained hair">窗帘式发型</option>
+            <option value="colored inner hair">内侧颜色</option>
+            <option value="streaked hair">条染</option>
+            <option value="hime cut">姬发式</option>
+            <option value="braid">辫子</option>
+            <option value="french braid">法式辫</option>
+            <option value="braided ponytail">编织马尾辫</option>
+            <option value="hair intakes">进气口发型</option>
+            <option value="hair behind ear">耳后发</option>
+            <option value="hair over shoulder">披肩发</option>
+            <option value="hair bun">团子头</option>
+            <option value="double bun">双团子头</option>
+		</select>
+		<select id="select3">
+			<option value="">脸部表情</option>
+            <option value="light smile">微笑</option>
+            <option value="grin">露齿而笑</option>
+            <option value="excited">兴奋</option>
+            <option value="smug">得意 屑</option>
+            <option value="shy">害羞</option>
+            <option value="sad">悲伤的</option>
+            <option value="sigh">叹气</option>
+            <option value="annoyed">苦恼的</option>
+            <option value="wide eyed">睁大眼睛</option>
+            <option value="serious">严肃</option>
+            <option value="scowl">锐利</option>
+            <option value="dark_persona">黑化的</option>
+            <option value="endured_face">忍耐的表情</option>
+            <option value="seductive smile">诱惑笑</option>
+            <option value="laughing">笑</option>
+            <option value="smirk">微笑</option>
+            <option value="embarrassed">害羞</option>
+            <option value="blush">脸红</option>
+            <option value="pout">别扭 努嘴</option>
+            <option value="angry">生气</option>
+            <option value="frown">皱眉/蹙额</option>
+            <option value="jitome">鄙夷的眼神</option>
+            <option value="smirk">认真</option>
+            <option value="crazy">疯狂的</option>
+            <option value="naughty_face">下流的表情</option>
+            <option value="ahegao">阿黑颜</option>
+		</select>
+		<select id="select4">
+            <option value="">衣着</option>
+            <option value="side-tie bikini bottom">系带比基尼裤</option>
+            <option value="front-tie bikini top">系带比基尼上衣</option>
+            <option value="frilled bikini">褶边比基尼</option>
+            <option value="string bikini">细带比基尼</option>
+            <option value="highleg bikini">高腰比基尼</option>
+            <option value="o-ring bikini">有环的比基尼</option>
+            <option value="mismatched bikini">不太懂</option>
+            <option value="revealing clothes">暴露的衣服</option>
+            <option value="see-through">半透明衣服</option>
+            <option value="garter straps">吊带袜</option>
+            <option value="cheerleader">啦啦队</option>
+            <option value="pleated skirt">百褶裙</option>
+            <option value="suspender skirt">吊带裙</option>
+            <option value="leotard">连体紧身衣</option>
+            <option value="tank top">汗衫</option>
+            <option value="taut clothes">绷紧的衣服</option>
+            <option value="string panties">细绳内裤</option>
+            <option value="panties under pantyhose">连裤袜下内裤</option>
+            <option value="undersized clothes">过小的衣服</option>
+            <option value="plugsuit">插入服，eva那种紧身衣</option>
+            <option value="legwear">腿上一切</option>
+            <option value="sailor collar">水手领</option>
+            <option value="yukata">浴衣</option>
+            <option value="sports bra">运动上衣</option>
+            <option value="lolita fashion">Lolita衣服</option>
+            <option value="skindentation">贴身的？</option>
+            <option value="sleeves past fingers">手指过长的袖子</option>
+            <option value="bunnysuit">兔女郎</option>
+            <option value="reverse outfit">逆着穿的衣服</option>
+            <option value="detached collar">分离式衣领，只有衣领</option>
+            <option value="cuffs">袖口</option>
+            <option value="midriff">露腰上衣</option>
+            <option value="crop top">露腰上衣</option>
+            <option value="clothing cutout">剪切过的衣服</option>
+            <option value="breast curtains">胸帘</option>
+            <option value="collared shirt">带领衬衫</option>
+            <option value="vest">马甲背心</option>
+            <option value="puffy sleeves">蓬松袖子</option>
+            <option value="peaked cap">宽檐帽</option>
+            <option value="pelvic curtain">骨盆帘</option>
+            <option value="halter shirt">吊带衬衫</option>
+            <option value="ribbed sweater">罗纹毛衣</option>
+            <option value="bodysuit">连体紧身衣</option>
+            <option value="torn clothes">撕破的衣服</option>
+            <option value="impossible clothes">不可能的衣服</option>
+            <option value="pantyhose">连裤袜</option>
+            <option value="competition swimsuit">竞泳</option>
+            <option value="cropped jacket">短外套</option>
+            <option value="crotchless panties">开裆内裤</option>
+            <option value="serafuku">水手服</option>
+            <option value="kimono">和服</option>
+            <option value="japanese clothes">日式服装</option>
+            <option value="bike shorts">骑行裤</option>
+            <option value="race queen">赛车女郎</option>
+            <option value="raglan sleeves">连肩衣袖</option>
+            <option value="sleeves past wrist">手腕过长的袖子</option>
+            <option value="reverse bunnysuit">逆兔女郎</option>
+            <option value="straitjacket">拘束衣</option>
+        </select>
+        <select id="select5">
+            <option value="">装饰</option>
+            <option value="tassel">流苏</option>
+            <option value="epaulettes">肩章</option>
+            <option value="ascot">宽领带</option>
+            <option value="trim">包边</option>
+            <option value="bowtie">蝴蝶结领带</option>
+            <option value="neck ribbon">系带领</option>
+            <option value="lapels">翻领</option>
+            <option value="frills">荷叶边</option>
+            <option value="buckle">扣带</option>
+            <option value="belt buckle">皮带扣</option>
+            <option value="chest harness">胸带</option>
+            <option value="suspenders">肩吊带</option>
+            <option value="lace-trimmed">蕾丝边</option>
+            <option value="veil">面纱</option>
+            <option value="tinted eyewear">有色眼镜</option>
+            <option value="pocket watch">怀表</option>
+            <option value="hachimaki">钵卷，日式头带</option>
+            <option value="headgear">头上机器</option>
+            <option value="sweatdrop">汗珠</option>
+            <option value="water drop">水滴</option>
+            <option value="falling petals">掉落的花瓣</option>
+            <option value="wrist cuffs">手腕袖口</option>
+            <option value="chain">锁链</option>
+            <option value="o-ring">圆环装饰</option>
+            <option value="oni horns">鬼角</option>
+            <option value="mouth mask">口罩</option>
+            <option value="wristband">腕带</option>
+            <option value="spaghetti strap">细肩带</option>
+            <option value="bridal gauntlets">长手套</option>
+            <option value="criss-cross halter">交错绕颈系带</option>
+            <option value="halterneck">绕颈系带</option>
+            <option value="harness">背带，挽具</option>
+            <option value="corset">束腰</option>
+            <option value="underbust">束腰</option>
+            <option value="necklace">项链</option>
+            <option value="sailor collar">水手领</option>
+            <option value="hairband">发带</option>
+            <option value="vambraces">护腕</option>
+            <option value="elbow gloves">肘部手套</option>
+            <option value="interface headset">明日香头上那个角</option>
+            <option value="chest jewel">胸前珠宝</option>
+            <option value="tiara">头冠</option>
+            <option value="fake animal ears">假动物耳朵</option>
+            <option value="hat bow">帽子蝴蝶结</option>
+            <option value="pompom(clothes)">衣服上的毛球</option>
+            <option value="pompom(cheerleading)">啦啦队彩球</option>
+            <option value="neck ring">颈环</option>
+            <option value="stitches">缝线</option>
+            <option value="visor cap">游客帽</option>
+            <option value="scrunchie">发圈束</option>
+            <option value="surgical mask">医用口罩</option>
+        </select>
+        <p><h3>姿势</h3></p>
+        <select id="select6">
+            <option value="">全身姿势</option>
+            <option value="leaning forward">前倾</option>
+            <option value="fetal position">婴儿姿势(侧躺手脚曲着)</option>
+            <option value="on_stomach">趴着</option>
+            <option value="lying">躺着</option>
+            <option value="seiza">正坐</option>
+            <option value="yokozuwari">侧身坐</option>
+            <option value="leg_hug">抱腿</option>
+            <option value="running">跑</option>
+            <option value="straddling">跨立</option>
+            <option value="smoking">抽烟</option>
+            <option value="caramelldansen">niconiconi</option>
+            <option value="fighting_stance">战斗姿态</option>
+            <option value="top-down_bottom-up">趴着翘臀</option>
+            <option value="all_fours">四肢趴地</option>
+            <option value="back-to-back">背对背</option>
+            <option value="eye_contact">眼对眼（对视）</option>
+            <option value="hug">拥抱</option>
+            <option value="sleeping">睡觉</option>
+            <option value="mimikaki">掏耳勺</option>
+            <option value="undressing">脱衣服</option>
+            <option value="against wall">靠墙</option>
+            <option value="squatting">蹲下</option>
+            <option value="sitting">坐</option>
+            <option value="wariza/w-sitting">割坐</option>
+            <option value="indian_style">盘腿</option>
+            <option value="walking">走</option>
+            <option value="straddle">跨坐</option>
+            <option value="kneeling">下跪</option>
+            <option value="arm_support">用手支撑住</option>
+            <option value="princess_carry">公主抱</option>
+            <option value="upside-down">颠倒的</option>
+            <option value="bent_over">翘臀姿势</option>
+            <option value="arched_back">弓身体</option>
+            <option value="symmetricalhandpose">手对手</option>
+            <option value="symmetrical_docking">2女胸部贴在一起</option>
+            <option value="lap_pillow">膝枕</option>
+            <option value="bathing">洗澡</option>
+            <option value="holding_hands">牵手</option>
+        </select>
+        <select id="select7">
+            <option value="">头部姿势</option>
+            <option value="head tilt">歪头</option>
+            <option value="looking back">回头看</option>
+            <option value="looking up">向上看</option>
+            <option value="turning around">回头</option>
+            <option value="looking down">向下看</option>
+            <option value="smelling">闻</option>
+        </select>
+        <p></p>
+        <select id="select8">
+            <option value="">手臂姿势</option>
+            <option value="handtomouth">手放在嘴边</option>
+            <option value="arm at side">手放头旁边</option>
+            <option value="arms behind head">手放脑后</option>
+            <option value="arms behind back">手放后面</option>
+            <option value="hand on own chest">手放在自己的胸前</option>
+            <option value="arms up/hands up">举手</option>
+            <option value="armpits">举手露腋</option>
+            <option value="grabbing">抓住</option>
+            <option value="fingersmile">用手指做出笑脸</option>
+            <option value="shirt lift">掀起上衣</option>
+            <option value="hair_pull">拉头发</option>
+            <option value="arms_crossed">手交叉于胸前</option>
+            <option value="hand on hip">手放臀</option>
+            <option value="hand on another's hip">手放另一侧臀</option>
+            <option value="handonhip">单手插腰</option>
+            <option value="handsonhips">双手叉腰</option>
+            <option value="stretch">伸懒腰</option>
+            <option value="leg hold">手把腿抓着</option>
+            <option value="holding">拿着</option>
+            <option value="skirt lift">掀起裙子</option>
+            <option value="adjusting_thighhigh">调整过膝袜</option>
+            <option value="hair scrunchie">撮头发</option>  
+        </select>
+        <select id="select9">
+            <option value="">手势</option>
+            <option value="v/peace_symbol">✌</option>
+            <option value="middle_finger">比出中指</option>
+            <option value="finger_gun">手枪手势</option>
+            <option value="waving">招手</option>
+            <option value="spread_arms">张手</option>
+            <option value="thumbs_up">翘大拇指</option>
+            <option value="cat_pose">猫爪手势</option>
+            <option value="shushing">嘘手势</option>
+            <option value="salute">敬礼</option>
+        </select>
+        <select id="select10">
+            <option value="">双腿姿势</option>
+            <option value="spread legs">张开腿</option>
+            <option value="fetal position">曲腿至胸</option>
+            <option value="legs up">抬两只脚</option>
+            <option value="crossed legs">二郎腿</option>
+            <option value="leg lift">抬一只脚</option>
+        </select>
+        <p></p>
+        <h3>环境</h3>
+        <select id="select11">
+            <option value="">总体</option>
+            <option value="cityscape">城市风景</option>
+            <option value="indoors">室内</option>
+            <option value="landscape">风景</option>
+            <option value="outdoors">室外</option>
+        </select>
+        <select id="select12">
+            <option value="">色调</option>
+            <option value="light">明</option>
+            <option value="dark">暗</option>
+            <option value="pale">薄</option>
+            <option value="shade">阴凉处</option>
+            <option value="deep">浓</option>
+            <option value="grey background">背景颜色（灰）</option>
+        </select>
+        <select id="select13">
+            <option value="">天气</option>
+            <option value="golden hour lighting">黄金时段照明</option>
+            <option value="strong rim light">强边缘光</option>
+            <option value="night">晚上</option>
+            <option value="intense shadows">强阴影</option>
+            <option value="full moon">满月</option>
+            <option value="in the rain">雨中</option>
+            <option value="rainy days">雨天</option>
+            <option value="sunset">日落</option>
+            <option value="cloudy">多云</option>
+            <option value="against backlight at dusk">傍晚背对阳光</option>
+        </select>
+        <p></p>
+        <select id="select14">
+            <option value="">室内环境</option>
+            <option value="mirror">反射</option>
+            <option value="on bed">床上</option>
+            <option value="on carpet">在地毯上</option>
+            <option value="chair">椅子</option>
+            <option value="poker table">赌桌</option>
+            <option value="curtains">窗帘</option>
+            <option value="on floor (wooden floor)">地板上</option>
+            <option value="on yoga mats">在瑜伽垫上</option>
+            <option value="magic circle">魔法阵</option>
+        </select>
+        <select id="select15">
+            <option value="">室外环境</option>
+            <option value="mountain">山</option>
+            <option value="on a hill">山上</option>
+            <option value="the top of the hill">山顶</option>
+            <option value="beautiful detailed sky, beautiful detailed water">好天好水</option>
+            <option value="on the beach">海滩上</option>
+            <option value="meadow">草地</option>
+            <option value="desert">沙漠</option>
+            <option value="ocean">大海</option>
+            <option value="over the sea">海边上</option>
+            <option value="beautiful purple sunset at beach in the ocean">海边日落</option>
+            <option value="sunset">落日</option>
+            <option value="on the ocean">在大海上</option>
+            <option value="plateau">高原</option>
+        </select>
+        <select id="select16">
+            <option value="">植被</option>
+            <option value="flower">花</option>
+            <option value="petal">花瓣</option>
+            <option value="rose">玫瑰</option>
+            <option value="rose petals">玫瑰花瓣</option>
+            <option value="falling petals">落花</option>
+            <option value="cherry_blossoms">樱花</option>
+            <option value="forest">森林/树</option>
+            <option value="pink four petal flower">粉色四瓣花</option>
+        </select>
+        <select id="select17">
+            <option value="">建筑</option>
+            <option value="in the baroque architecture">巴洛克建筑</option>
+            <option value="in the palace">宫廷</option>
+            <option value="in the castle">城内为背景</option>
+            <option value="in the cyberpunk city">赛博朋克</option>
+            <option value="at the lighthouse">灯塔</option>
+            <option value="by the moon">月亮边</option>
+            <option value="in a tavern">居酒屋</option>
+            <option value="church">教堂</option>
+            <option value="cityspace">城市风光式</option>
+            <option value="building">建筑</option>
+            <option value="in the romanesque architecture streets">罗马街道</option>
+            <option value="at the castle">城外为背景</option>
+            <option value="in the street">在街上</option>
+            <option value="rainy night in a cyberpunk city with glowing neon lights">赛博朋克雨天霓虹灯</option>
+            <option value="onsen">温泉</option>
+            <option value="in a bar, in bars">酒吧</option>
+            <option value="Japanese arch">鸟居</option>
+            <option value="in a locker room">上锁房间里</option>
+            <option value="power lines">电力线</option>
+            <option value="ruins">废墟/遗迹</option>
+        </select>
+		<!-- 依次添加下拉选择框 -->
+		<!-- 可以在option标签内添加提示词+备注 -->
+        <p></p>
+		<button type="button" onclick="combineSelections()">提交</button>
+        <button type="button" onclick="resetSelections()">重置</button>
+	</form>
+	<p>您的选择结果为:</p>
+	<textarea id="result" rows="5" cols="50"></textarea>
+
+	<script>
+		function combineSelections() {
+			// 获取所有下拉选择框的值
+            var selects = document.getElementsByTagName("select");
+
+            // 创建一个空数组来存储所有选中的选项的值
+            var selectedValues = [];
+
+            // 循环遍历所有下拉选择框，并将有选中的选项的值添加到数组中
+            for (var i = 0; i < selects.length; i++) {
+                var selectValue = selects[i].value;
+                if (selectValue) {
+                    selectedValues.push(selectValue);
+                }
+            }
+
+            // 将所有值用逗号链接起来
+            var result = selectedValues.join(", ");
+
+
+			// 将结果显示在文本框中
+			document.getElementById("result").value = result;
+		}
+        function resetSelections() {
+			// 将所有下拉选择框的值重置为默认值
+            var selects = document.getElementsByTagName("select");
+
+            // 循环遍历所有下拉选择框，并将其值重置为默认值
+            for (var i = 0; i < selects.length; i++) {
+                selects[i].value = "";
+            }
+
+			// 清空结果文本框的内容
+			document.getElementById("result").value = "";
+		}
+        function copyText() {
+            // 获取结果文本框
+            var resultBox = document.getElementById("result");
+
+            // 选择结果文本框中的内容
+            resultBox.select();
+
+            // 复制选中的文本到剪贴板中
+            document.execCommand("copy");
+
+            // 取消选中文本
+            window.getSelection().removeAllRanges();
+        }
+
+        // 创建一个按钮元素
+        var copyButton = document.createElement("button");
+        copyButton.innerText = "复制结果";
+        copyButton.onclick = copyText;
+
+        // 将按钮添加到页面中
+        document.body.appendChild(copyButton);
+	</script>
+</body>
+</html>
